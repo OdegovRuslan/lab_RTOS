@@ -101,7 +101,13 @@ int main(int argc, char *argv[]){
 
 	write(fd, buffer, BUF_SIZE);
 	close(fd);
+	
+	for (int i = 0; i < n; ++i){
+		delete[] d[i].buffer_lkg;
+    		delete[] d[i].buffer_t;
+    		delete[] d[i].buffer;
+	}
 
-    delete buffer, buffer_t, buffer_lkg;
+    delete[] buffer, buffer_t, buffer_lkg;
     return 0;
 }
