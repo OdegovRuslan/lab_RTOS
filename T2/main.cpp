@@ -27,7 +27,7 @@ void* f(void* arc){
     	d->buffer[i] = d->buffer_t[i] ^ (d->buffer_lkg[i] % 127);
     }
 
-	status = pthread_barrier_wait(&barrier);
+	int status = pthread_barrier_wait(&barrier);
 	if (status == PTHREAD_BARRIER_SERIAL_THREAD) {
 		pthread_barrier_destroy(&barrier);
 	}
@@ -79,7 +79,7 @@ int main(int argc, char *argv[]){
     	pthread_create(&p[i], NULL, f, &d[i]);
     }
 
-    	status = pthread_barrier_wait(&barrier);
+    	int status = pthread_barrier_wait(&barrier);
 	if (status == PTHREAD_BARRIER_SERIAL_THREAD) {
 		pthread_barrier_destroy(&barrier);
 	}
