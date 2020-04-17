@@ -107,7 +107,9 @@ int main(int argc, char *argv[]){
     		delete[] d[i].buffer_t;
     		delete[] d[i].buffer;
 	}
-
-    delete[] buffer, buffer_t, buffer_lkg;
+	
+	delete[] buffer;
+	delete[] buffer_t;
+	delete[] buffer_lkg;
     return 0;
 }
